@@ -1,0 +1,10 @@
+<p>mobile-product works!</p>
+
+<img [src]="mobile.mimg" style="width: 300px; height: 300px" />
+
+<div>Name :{{ mobile.name }}</div>
+<div>Price :{{ mobile.price }}</div>
+<div>Color :{{ mobile.color }}</div>
+<div>Stock :{{ mobile.inStock }}</div>
+
+<button [disabled]="!(mobile.inStock > 0)">Buy Now</button>

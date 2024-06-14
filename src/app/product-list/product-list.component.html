@@ -1,0 +1,16 @@
+<p>product-list works!</p>
+
+<ng-container *ngFor="let detail of Details">
+  <div *ngIf="detail.color === 'semi-white' || detail.color === 'black'">
+    {{ detail.name }}
+    {{ detail.age }}
+    {{ detail.color }}
+    {{ detail.age }}
+  </div>
+  <div [ngStyle]="{ color: detail.age % 2 === 0 ? 'green' : 'blue' }">
+    {{ detail.name }}
+    {{ detail.age }}
+    {{ detail.color }}
+    {{ detail.age }}
+  </div>
+</ng-container>
