@@ -1,10 +1,27 @@
 <p>mobile-product works!</p>
 
-<img [src]="mobile.mimg" style="width: 300px; height: 300px" />
+<!-- <img [src]="mobile.mimg" style="width: 300px; height: 300px" />
 
 <div>Name :{{ mobile.name }}</div>
 <div>Price :{{ mobile.price }}</div>
 <div>Color :{{ mobile.color }}</div>
 <div>Stock :{{ mobile.inStock }}</div>
 
-<button [disabled]="!(mobile.inStock > 0)">Buy Now</button>
+<button [disabled]="!(mobile.inStock > 0)">Buy Now</button> -->
+
+<app-filter
+  [all]="productCount"
+  [InStock]="productInStock"
+  [NotInStock]="productNotInStock"
+  (radioButtonChanged)="onFilterChange($event)"
+></app-filter>
+
+<div *ngFor="let mob of mobile">
+  <app-mobile
+    [mobi]="mob"
+    *ngIf="
+      onRadioButtonChanged === 'all' ||
+      mob.inStock.toString() === onRadioButtonChanged
+    "
+  ></app-mobile>
+</div>

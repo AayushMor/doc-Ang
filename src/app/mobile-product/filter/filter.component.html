@@ -1,0 +1,28 @@
+<p>filter works!</p>
+
+<input
+  type="radio"
+  name="filter"
+  value="all"
+  [(ngModel)]="allRadioButtonSelected"
+  (change)="OnRadioButtonChanged()"
+/>
+<span>All {{ "(" + all + ")" }} </span>
+
+<input
+  type="radio"
+  name="filter"
+  value="true"
+  [(ngModel)]="allRadioButtonSelected"
+  (change)="OnRadioButtonChanged()"
+/>
+<span>InStock {{ "(" + InStock + ")" }}</span>
+
+<input
+  type="radio"
+  name="filter"
+  value="false"
+  [(ngModel)]="allRadioButtonSelected"
+  (change)="OnRadioButtonChanged()"
+/>
+<span>Not InStock {{ "(" + NotInStock + ")" }}</span>
